@@ -1,5 +1,5 @@
 Motor Controller — WWH
-
+https://www.youtube.com/watch?v=PVyAcgYkzDs&t=123s
 1. WHY (Purpose)
 A motor controller is needed because motors don’t just magically work with logic signals. They require precise control of voltage, current, and direction to operate efficiently, safely, and reliably.
 
