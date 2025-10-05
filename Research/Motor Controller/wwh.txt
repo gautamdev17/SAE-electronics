@@ -1,0 +1,53 @@
+Motor Controller — WWH
+
+1. WHY (Purpose)
+A motor controller is needed because motors don’t just magically work with logic signals. They require precise control of voltage, current, and direction to operate efficiently, safely, and reliably.
+
+Motors have characteristics that need management:
+- High current draw (especially at startup)
+- Variable speed requirements
+- Direction changes
+- Protection against overcurrent, overheating, or back EMF
+
+Without a motor controller, you risk:
+- Damaging the motor or the driving electronics (Arduino, FPGA, etc.)
+- Poor performance (jerky movement, noise, low efficiency)
+- Loss of precision and control
+
+---
+
+2. WHAT (Definition & Components)
+A motor controller is an electronic device or circuit that regulates the operation of an electric motor. It can control:
+- Speed (via PWM or variable voltage)
+- Direction (forward/reverse)
+- Torque
+- Braking
+
+Common types of motor controllers:
+- H-Bridge Drivers: control direction and speed of DC motors
+- ESC (Electronic Speed Controllers): for brushless DC motors
+- Motor driver ICs: like L298N, TB6612FNG, DRV8833
+
+Core components inside a motor controller:
+- Power transistors (MOSFETs/IGBTs)
+- PWM generation logic
+- Protection circuits (overcurrent, overvoltage, thermal)
+- Feedback mechanisms (encoders, current sensors)
+
+---
+
+3. HOW (Working Principle)
+Motor controllers work by modulating the power supplied to the motor and controlling direction through switches.
+
+Example for a DC motor (H-Bridge):
+- Use MOSFETs to connect motor terminals to supply voltage in controlled ways
+- Control speed with PWM (Pulse Width Modulation): adjust duty cycle to change effective voltage
+- Control direction by switching polarity of the motor terminals
+
+Simplified operation:
+Microcontroller → PWM signal → Motor driver circuit → Motor
+
+Protection: Motor controllers also prevent damage by:
+- Absorbing back EMF with flyback diodes
+- Limiting current via sensors and feedback loops
+- Monitoring temperature and shutting down if needed
